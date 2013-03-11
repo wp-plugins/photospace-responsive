@@ -8,7 +8,7 @@ Requires at least: 3.0
 Tested up to: 3.5.1
 Stable tag: 1.0.0
 
-The Photospace plugin takes advantage of the built in features of WP by automatically adding any images attached to the post or page into the gallery.
+A simplified version of Photospace featuring a responsive only layout.
 
 == Description ==
 
