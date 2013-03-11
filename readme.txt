@@ -42,11 +42,6 @@ See a [demo here](http://thriveweb.com.au/the-lab/photospace-responsive/ "Photos
 3. Upload some photos to the post or page where you want the gallery
 4. Use WordPress to create a gallery and insert it in the page
 
-== Screenshots ==
-
-1. Screenshot Default gallery layout
-2. Screenshot Admin Area
-
 == Changelog ==
 
 = 1.0 =
