@@ -12,8 +12,8 @@ The Photospace plugin takes advantage of the built in features of WP by automati
 
 == Description ==
 
-Photospace takes advantage of the built in gallery features of WordPress, the plugin automatically adds any images attached to the post or page into the gallery.
-Then simply use the shortcode [photospace] in the post or page content and your done.
+Based on the Galleriffic gallery, Photospace takes advantage of the built in gallery features of WordPress.
+Then simply use the WordPress admin to create a gallery and insert it in the page. You may need to adjust the size of the gallery to suit your theme in the settings.
 
 The Photospace gallery plugin allows you to:
 
@@ -25,7 +25,7 @@ Via the options panel you can modify:
 
 * Thumbnail number, size and shape
 * Size of the main image
-* The width of the gallery columns and the size of the main image
+* The width of the main images
 
 Some other features include:
 
@@ -33,11 +33,11 @@ Some other features include:
 * Pagination
 * Supports multiple galleries (Displayed via multiple posts)
 
-See a [demo here](http://thriveweb.com.au/the-lab/photospace-responsive/ "Photospace") 
+See a [demo here](http://thriveweb.com.au/the-lab/photospace-responsive/ "Photospace Resposive") 
 
 == Installation == 
 
-1. Upload `/photospace/` to the `/wp-content/plugins/` directory
+1. Upload `/photospace-responsive/` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Upload some photos to the post or page where you want the gallery
 4. Place the shortcode [photospace]  in your content
