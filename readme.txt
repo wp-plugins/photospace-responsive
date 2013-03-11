@@ -40,12 +40,12 @@ See a [demo here](http://thriveweb.com.au/the-lab/photospace-responsive/ "Photos
 1. Upload `/photospace-responsive/` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Upload some photos to the post or page where you want the gallery
-4. Place the shortcode [photospace]  in your content
+4. Use WordPress to create a gallery and insert it in the page
 
 == Screenshots ==
 
 1. Screenshot Default gallery layout
-2. Screenshot Admin Area 
+2. Screenshot Admin Area
 
 == Changelog ==
 
