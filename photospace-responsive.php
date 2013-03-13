@@ -6,7 +6,7 @@ Description: A simplified version of Photospace featuring a responsive only layo
 <a href="http://www.twospy.com/galleriffic/>galleriffic</a>
 Author: Dean Oakley
 Author URI: http://deanoakley.com/
-Version: 1.0.0
+Version: 1.0.1
 */
 
 /*  Copyright 2010  Dean Oakley  (email : contact@deanoakley.com)
@@ -420,17 +420,8 @@ function photospace_responsive_shortcode( $atts ) {
 			<!-- Start Advanced Gallery Html Containers -->
 			<div class="thumbs_wrap2">
 				<div class="thumbs_wrap">
-					<div id="thumbs_'.$post_id.'" class="thumnail_row '. $hide_thumb_style . '" >';					
-						
-						$output_buffer .='
-						<div class="psr_paging">
-							<a class="pageLink prev" style="'. $thumb_style_init . '" href="#" title="Previous Page"></a>
-							<a class="pageLink next" style="'.$thumb_style_init.'" href="#" title="Next Page"></a>
-						</div>
-						';
-						
-						$output_buffer .='
-						<ul class="thumbs noscript">';
+					<div id="thumbs_'.$post_id.'" class="thumnail_row '. $hide_thumb_style . '" >';	
+
 													
 						if ( !empty($include) ) { 
 							$include = preg_replace( '/[^0-9,]+/', '', $include );
@@ -446,6 +437,21 @@ function photospace_responsive_shortcode( $atts ) {
 						} else {
 							$attachments = get_children( array('post_parent' => $id, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
 						}
+						
+						if($num_thumb < count($attachments)):
+						
+							$output_buffer .='
+							<div class="psr_paging">
+								<a class="pageLink prev" style="'. $thumb_style_init . '" href="#" title="Previous Page"></a>
+								<a class="pageLink next" style="'.$thumb_style_init.'" href="#" title="Next Page"></a>
+							</div>
+							';
+						
+						endif;
+						
+						$output_buffer .='
+						<ul class="thumbs noscript">';
+						
 		
 						if ( !empty($attachments) ) {
 							foreach ( $attachments as $aid => $attachment ) {
