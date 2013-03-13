@@ -12,7 +12,7 @@
 .photospace_res .slideshow span,
 .photospace_res .slideshow a.advance-link,
 .photospace_res .slideshow img{
-    width: 100%;
+    width: auto;
     height: auto;
 } 
 
