@@ -6,7 +6,7 @@ Description: A simplified version of Photospace featuring a responsive only layo
 <a href="http://www.twospy.com/galleriffic/>galleriffic</a>
 Author: Dean Oakley
 Author URI: http://deanoakley.com/
-Version: 1.0.2
+Version: 1.0.3
 */
 
 /*  Copyright 2010  Dean Oakley  (email : contact@deanoakley.com)
@@ -340,6 +340,7 @@ function photospace_responsive_wp_headers() {
 				.photospace_res .next,
 				.photospace_res .prev{
 					margin-right:'. $options['thumbnail_margin'] .'px !important;
+					margin-bottom:'. $options['thumbnail_margin'] .'px !important;
 				}
 		';
 
