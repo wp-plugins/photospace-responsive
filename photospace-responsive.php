@@ -272,11 +272,11 @@ add_theme_support( 'post-thumbnails' );
 add_image_size('photospace_responsive_thumbnails', $options['thumbnail_width'] * 2, $options['thumbnail_height'] * 2, $options['thumbnail_crop']);
 add_image_size('photospace_responsive_full', $options['max_image_width'], $options['max_image_height']);
 
-function admin_register_head() {
+function photospace_responsive_register_head() {
     $url = site_url()."/wp-content/plugins/photospace-responsive" . '/admin.css';
     echo "<link rel='stylesheet' type='text/css' href='$url' />\n";
 }
-add_action('admin_head', 'admin_register_head');
+add_action('admin_head', 'photospace_responsive_register_head');
 
 //============================== insert HTML header tag ========================//
 

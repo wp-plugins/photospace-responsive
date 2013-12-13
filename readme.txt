@@ -49,7 +49,7 @@ See a [demo here](http://thriveweb.com.au/the-lab/photospace-responsive/ "Photos
 
 == Changelog ==
 
-= 1.1.0 =
+= 1.1.1 =
 * Retina thumbnails
 * Admin updates
 * SVG arrows
