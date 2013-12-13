@@ -6,7 +6,7 @@ Description: A simplified version of Photospace featuring a responsive only layo
 <a href="http://www.twospy.com/galleriffic/>galleriffic</a>
 Author: Dean Oakley
 Author URI: http://deanoakley.com/
-Version: 1.0.3
+Version: 1.1.0
 */
 
 /*  Copyright 2010  Dean Oakley  (email : contact@deanoakley.com)
@@ -142,7 +142,7 @@ class photospace_responsive_plugin_options {
 			photospace_responsive_plugin_options::PSR_getOptions();
 		}
 
-		add_menu_page('Photospace Responsive options', 'Photospace Responsive', 'edit_themes', basename(__FILE__), array('photospace_responsive_plugin_options', 'display'));
+		add_submenu_page( 'options-general.php', 'Photospace Responsive options', 'Photospace Responsive', 'edit_themes', basename(__FILE__), array('photospace_responsive_plugin_options', 'display'));
 	}
 	
 
@@ -151,101 +151,101 @@ class photospace_responsive_plugin_options {
 		$options = photospace_responsive_plugin_options::PSR_getOptions();
 		?>
 		
-		<div class="wrap">
+		<div id="photospace_res_admin" class="wrap">
 		
 			<h2>Photospace Options</h2>
 			
 			<form method="post" action="#" enctype="multipart/form-data">				
 				
-				<div class="wp-menu-separator" style="clear:both; padding-bottom:15px; border-bottom:solid 1px #e6e6e6" ></div>
+				<div class="wp-menu-separator" class="ps_border" ></div>
 								
-				<h3><label><input name="show_controls" type="checkbox" value="checkbox" <?php if($options['show_controls']) echo "checked='checked'"; ?> /> Show controls (play slide show / Next Prev image links)</label></h3>			
+				<p><label><input name="show_controls" type="checkbox" value="checkbox" <?php if($options['show_controls']) echo "checked='checked'"; ?> /> Show controls</label></p>			
 	
-				<h3><label><input name="enable_history" type="checkbox" value="checkbox" <?php if($options['enable_history']) echo "checked='checked'"; ?> /> Enable history </label></h3>			
+				<p><label><input name="enable_history" type="checkbox" value="checkbox" <?php if($options['enable_history']) echo "checked='checked'"; ?> /> Enable history </label></p>			
 				
 				
-				<h3><label><input name="show_captions" type="checkbox" value="checkbox" <?php if($options['show_captions']) echo "checked='checked'"; ?> /> Show Title / Caption / Desc under image</label></h3>
+				<p><label><input name="show_captions" type="checkbox" value="checkbox" <?php if($options['show_captions']) echo "checked='checked'"; ?> /> Show Title / Caption / Desc under image</label></p>
 				
-				<h3><label><input name="reset_css" type="checkbox" value="checkbox" <?php if($options['reset_css']) echo "checked='checked'"; ?> /> Try to clear current theme image css / formatting</label></h3>			
+				<p><label><input name="reset_css" type="checkbox" value="checkbox" <?php if($options['reset_css']) echo "checked='checked'"; ?> /> Try to clear current theme image css / formatting</label></p>			
 				
 				
-				<div style="clear:both; padding-bottom:15px; border-bottom:solid 1px #e6e6e6" ></div>
+				<div class="ps_border" ></div>
 				
-				<div style="width:25%;float:left;">		
-					<h3><label><input name="auto_play" type="checkbox" value="checkbox" <?php if($options['auto_play']) echo "checked='checked'"; ?> /> Auto play slide show</label></h3>
+				<div class="fl_box">		
+					<p><label><input name="auto_play" type="checkbox" value="checkbox" <?php if($options['auto_play']) echo "checked='checked'"; ?> /> Auto play slide show</label></p>
 				</div>
-				<div style="width:25%;float:left;">		
-					<h3><label><input name="hide_thumbs" type="checkbox" value="checkbox" <?php if($options['hide_thumbs']) echo "checked='checked'"; ?> /> Hide thumbnails</label></h3>
+				<div class="fl_box">		
+					<p><label><input name="hide_thumbs" type="checkbox" value="checkbox" <?php if($options['hide_thumbs']) echo "checked='checked'"; ?> /> Hide thumbnails</label></p>
 				</div>
-				<div style="width:25%;float:left;">		
-					<h3>Slide delay in milliseconds</h3>
+				<div class="fl_box">		
+					<p>Slide delay in milliseconds</p>
 					<p><input type="text" name="delay" value="<?php echo($options['delay']); ?>" /></p>
 				</div>
 				
-				<div style="width:25%;float:left;">		
-					<h3>Page button size</h3>
+				<div class="fl_box">		
+					<p>Page button size</p>
 					<p><input type="text" name="button_size" value="<?php echo($options['button_size']); ?>" /></p>
 				</div>
 				
 				
-				<div style="clear:both; padding-bottom:15px; border-bottom:solid 1px #e6e6e6" ></div>
+				<div class="ps_border" ></div>
 				
 				<h3 style="font-style:italic; font-weight:normal; color:grey " >Images that are already on the server will not change size until you regenerate the thumbnails. Use <a title="http://wordpress.org/extend/plugins/ajax-thumbnail-rebuild/" href="http://wordpress.org/extend/plugins/ajax-thumbnail-rebuild/">AJAX thumbnail rebuild</a> or <a title="http://wordpress.org/extend/plugins/regenerate-thumbnails/" href="http://wordpress.org/extend/plugins/regenerate-thumbnails/">Regenerate Thumbnails</a> </h3>
 				<h3 style="font-style:italic; font-weight:normal; color:grey " >Max size should be set to the size your images stretch to when your theme is at full size.</h3>
 				
-				<div style="width:25%;float:left;">				
-					<h3>Thumbnail Width</h3>
+				<div class="fl_box">				
+					<p>Thumbnail Width</p>
 					<p><input type="text" name="thumbnail_width" value="<?php echo($options['thumbnail_width']); ?>" /></p>
 				</div>
 				
-				<div style="width:25%; float:left;">				
-					<h3>Thumbnail Height</h3>
+				<div class="fl_box">				
+					<p>Thumbnail Height</p>
 					<p><input type="text" name="thumbnail_height" value="<?php echo($options['thumbnail_height']); ?>" /></p>
 				</div>
 				
-				<div style="width:25%; float:left">
-					<h3>Max image width</h3>
+				<div class="fl_box">
+					<p>Max image width</p>
 					<p><input type="text" name="max_image_width" value="<?php echo($options['max_image_width']); ?>" /></p>
 				</div>
 				
-				<div style="width:25%; float:left">
-					<h3>Max image height</h3>
+				<div class="fl_box">
+					<p>Max image height</p>
 					<p><input type="text" name="max_image_height" value="<?php echo($options['max_image_height']); ?>" /></p>
 				</div>
 				
-				<div style="width:25%; float:left;">
-					<h3>Crop thumbnails</h3>
-					<h3><label><input name="thumbnail_crop" type="checkbox" value="checkbox" <?php if($options['thumbnail_crop']) echo "checked='checked'"; ?> /></label></h3>
+				<div class="fl_box">
+					<p>Crop thumbnails</p>
+					<p><label><input name="thumbnail_crop" type="checkbox" value="checkbox" <?php if($options['thumbnail_crop']) echo "checked='checked'"; ?> /></label></p>
 
 				</div>				
 
-				<div style="clear:both; padding-bottom:15px; border-bottom:solid 1px #e6e6e6" ></div>
+				<div class="ps_border" ></div>
 				
-				<div style="width:25%;float:left;">		
-					<h3>Number of thumbnails</h3>
+				<div class="fl_box">		
+					<p>Number of thumbnails</p>
 					<p><input type="text" name="num_thumb" value="<?php echo($options['num_thumb']); ?>" /></p>
 				</div>
 				
-				<div style="width:25%; float:left;">				
-					<h3>Thumbnail margin</h3>
+				<div class="fl_box">				
+					<p>Thumbnail margin</p>
 					<p><input type="text" name="thumbnail_margin" value="<?php echo($options['thumbnail_margin']); ?>" /></p>
 				</div>
 				
 				
-				<div style="clear:both; padding-bottom:15px; border-bottom:solid 1px #e6e6e6" ></div>
+				<div class="ps_border" ></div>
 				
 								
-				<div style="width:25%; float:left;">
-					<h3>Play text</h3>				
+				<div class="fl_box">
+					<p>Play text</p>				
 					<p><input type="text" name="play_text" value="<?php echo($options['play_text']); ?>" /></p>
 				</div>
 				
-				<div style="width:25%; float:left;">
-					<h3>Pause text</h3>					
+				<div class="fl_box">
+					<p>Pause text</p>					
 					<p><input type="text" name="pause_text" value="<?php echo($options['pause_text']); ?>" /></p>
 				</div>
 				
-				<div style="clear:both; padding-bottom:15px; border-bottom:solid 1px #e6e6e6" ></div>
+				<div class="ps_border" ></div>
 
 			
 				<p><input class="button-primary" type="submit" name="psr_save" value="Save Changes" /></p>
@@ -269,8 +269,14 @@ add_action('admin_menu', array('photospace_responsive_plugin_options', 'update')
 $options = get_option('psr_options');
 
 add_theme_support( 'post-thumbnails' );
-add_image_size('photospace_responsive_thumbnails', $options['thumbnail_width'], $options['thumbnail_height'], $options['thumbnail_crop']);
+add_image_size('photospace_responsive_thumbnails', $options['thumbnail_width'] * 2, $options['thumbnail_height'] * 2, $options['thumbnail_crop']);
 add_image_size('photospace_responsive_full', $options['max_image_width'], $options['max_image_height']);
+
+function admin_register_head() {
+    $url = site_url()."/wp-content/plugins/photospace-responsive" . '/admin.css';
+    echo "<link rel='stylesheet' type='text/css' href='$url' />\n";
+}
+add_action('admin_head', 'admin_register_head');
 
 //============================== insert HTML header tag ========================//
 
@@ -321,6 +327,14 @@ function photospace_responsive_wp_headers() {
 			}
 			';
 	}
+	
+	echo '
+		.photospace_res ul.thumbs img {
+			width:'.$options['thumbnail_width'] .'px;
+			height:'.$options['thumbnail_height'] .'px;
+		}
+	';
+	
 	
 	if(!empty($options['button_size']))
 		echo '
@@ -442,10 +456,10 @@ function photospace_responsive_shortcode( $atts ) {
 						if($num_thumb < count($attachments)):
 						
 							$output_buffer .='
-							<div class="psr_paging">
-								<a class="pageLink prev" style="'. $thumb_style_init . '" href="#" title="Previous Page"></a>
-								<a class="pageLink next" style="'.$thumb_style_init.'" href="#" title="Next Page"></a>
-							</div>
+								<div class="psr_paging">
+									<a class="pageLink prev" style="'. $thumb_style_init . '" href="#" title="Previous Page"></a>
+									<a class="pageLink next" style="'.$thumb_style_init.'" href="#" title="Next Page"></a>
+								</div>
 							';
 						
 						endif;
@@ -576,7 +590,7 @@ function photospace_responsive_shortcode( $atts ) {
 						
 					},
 					onPageTransitionOut:       function(callback) {
-						this.hide();
+						//this.hide();
 						setTimeout(callback, 100); // wait a bit
 					},
 					onPageTransitionIn:        function() {

@@ -176,7 +176,7 @@
 	outline: none;
 }
 .photospace_res ul.thumbs img {
-	display: block;	
+	display: block;
 }
 
 .photospace_res .psr_paging{
@@ -208,10 +208,10 @@
 }
 
 .photospace_res .thumnail_row a.prev {
-	background-image: url('arrow-left.png');
+	background-image: url('arrow-left.svg');
 }
 .photospace_res .thumnail_row a.next {
-	background-image: url('arrow-right.png');
+	background-image: url('arrow-right.svg');
 }
 
 .photospace_res .hide_me{
