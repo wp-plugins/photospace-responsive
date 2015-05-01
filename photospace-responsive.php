@@ -1,12 +1,12 @@
 <?php
 /*
 Plugin Name: Photospace Responsive
-Plugin URI: http://thriveweb.com.au/the-lab/xxx/
+Plugin URI: http://thriveweb.com.au/the-lab/photospace-responsive/
 Description: A simplified version of Photospace featuring a responsive only layout. This is a image gallery plugin for WordPress built using Galleriffic. 
 <a href="http://www.twospy.com/galleriffic/>galleriffic</a>
 Author: Dean Oakley
 Author URI: http://deanoakley.com/
-Version: 1.1.4
+Version: 1.1.5
 */
 
 /*  Copyright 2010  Dean Oakley  (email : contact@deanoakley.com)
@@ -32,7 +32,7 @@ if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) {
 //============================== Photospace options ========================//
 class photospace_responsive_plugin_options {
 
-	function PSR_getOptions() {
+	public static function PSR_getOptions() {
 	
 		$options = get_option('psr_options');
 		
@@ -72,7 +72,7 @@ class photospace_responsive_plugin_options {
 		return $options;
 	}
 
-	function update() {
+	public static function update() {
 		if(isset($_POST['psr_save'])) {
 			$options = photospace_responsive_plugin_options::PSR_getOptions();
 			
@@ -146,7 +146,7 @@ class photospace_responsive_plugin_options {
 	}
 	
 
-	function display() {
+	public static function display() {
 		
 		$options = photospace_responsive_plugin_options::PSR_getOptions();
 		?>
@@ -474,7 +474,7 @@ function photospace_responsive_shortcode( $atts ) {
 							foreach ( $attachments as $aid => $attachment ) {
 								$img = wp_get_attachment_image_src( $aid , 'photospace_responsive_full');
 								$thumb = wp_get_attachment_image_src( $aid , 'photospace_responsive_thumbnails');
-								$_post = & get_post($aid); 
+								$_post = get_post($aid); 
 		
 								$image_title = esc_attr($_post->post_title);
 								$image_alttext = get_post_meta($aid, '_wp_attachment_image_alt', true);
